@@ -1,11 +1,9 @@
-﻿static void MainAnimation()
+﻿
+namespace HangingMan.Game
 {
-    // to activate the code
-    // Buchkov please do this...
-}
-static void WinAnimation() // End animation, when you win
-{
-    const string winScreenText = @"
+    public class Animations()
+    {
+        public static string winScreenText = @"
 ┌───────────────────────────┐
 │                           │
 │ WW       WW  **  NN   N   │
@@ -19,11 +17,8 @@ static void WinAnimation() // End animation, when you win
 └───────────────────────────┘
 
 ";
-}
-static void lossAnimationText() // End animation, when you loose
-{
-    const string lossScreenText = @"
-@""
+
+        public static string lossScreenText = @"
 ┌────────────────────────────────────┐
 │  LLL          OOOO    SSSS   SSSS  │
 │  LLL         OO  OO  SS  SS SS  SS │
@@ -38,68 +33,66 @@ static void lossAnimationText() // End animation, when you loose
 └────────────────────────────────────┘
 
 ";
-}
-// When you guess a wrong letter, there will be always added one part of the man.
-static void FigureWrongLetterAnimation()
-{
-    string[] wrongGuessesFrames = {
-    @"      ╔═══╗   " + '\n' +
-    @"      |   ║   " + '\n' +
-    @"          ║   " + '\n' +
-    @"          ║   " + '\n' +
-    @"          ║   " + '\n' +
-    @"     ███  ║   " + '\n' +
-    @"    ══════╩═══",
 
-    @"      ╔═══╗   " + '\n' +
-    @"      |   ║   " + '\n' +
-    @"      O   ║   " + '\n' +
-    @"          ║   " + '\n' +
-    @"          ║   " + '\n' +
-    @"     ███  ║   " + '\n' +
-    @"    ══════╩═══",
+        public static string[] wrongGuessesFrames = {
+            @"      ╔═══╗   " + '\n' +
+            @"      |   ║   " + '\n' +
+            @"          ║   " + '\n' +
+            @"          ║   " + '\n' +
+            @"          ║   " + '\n' +
+            @"     ███  ║   " + '\n' +
+            @"    ══════╩═══",
 
-    @"      ╔═══╗   " + '\n' +
-    @"      |   ║   " + '\n' +
-    @"      O   ║   " + '\n' +
-    @"      |   ║   " + '\n' +
-    @"          ║   " + '\n' +
-    @"     ███  ║   " + '\n' +
-    @"    ══════╩═══",
+            @"      ╔═══╗   " + '\n' +
+            @"      |   ║   " + '\n' +
+            @"      O   ║   " + '\n' +
+            @"          ║   " + '\n' +
+            @"          ║   " + '\n' +
+            @"     ███  ║   " + '\n' +
+            @"    ══════╩═══",
 
-    @"      ╔═══╗   " + '\n' +
-    @"      |   ║   " + '\n' +
-    @"      O   ║   " + '\n' +
-    @"      |\  ║   " + '\n' +
-    @"          ║   " + '\n' +
-    @"     ███  ║   " + '\n' +
-    @"    ══════╩═══",
+            @"      ╔═══╗   " + '\n' +
+            @"      |   ║   " + '\n' +
+            @"      O   ║   " + '\n' +
+            @"      |   ║   " + '\n' +
+            @"          ║   " + '\n' +
+            @"     ███  ║   " + '\n' +
+            @"    ══════╩═══",
 
-    @"      ╔═══╗   " + '\n' +
-    @"      |   ║   " + '\n' +
-    @"      O   ║   " + '\n' +
-    @"     /|\  ║   " + '\n' +
-    @"          ║   " + '\n' +
-    @"     ███  ║   " + '\n' +
-    @"    ══════╩═══",
+            @"      ╔═══╗   " + '\n' +
+            @"      |   ║   " + '\n' +
+            @"      O   ║   " + '\n' +
+            @"      |\  ║   " + '\n' +
+            @"          ║   " + '\n' +
+            @"     ███  ║   " + '\n' +
+            @"    ══════╩═══",
 
-    @"      ╔═══╗   " + '\n' +
-    @"      |   ║   " + '\n' +
-    @"      O   ║   " + '\n' +
-    @"     /|\  ║   " + '\n' +
-    @"       \  ║   " + '\n' +
-    @"     ███  ║   " + '\n' +
-    @"    ══════╩═══",
+            @"      ╔═══╗   " + '\n' +
+            @"      |   ║   " + '\n' +
+            @"      O   ║   " + '\n' +
+            @"     /|\  ║   " + '\n' +
+            @"          ║   " + '\n' +
+            @"     ███  ║   " + '\n' +
+            @"    ══════╩═══",
 
-    @"      ╔═══╗   " + '\n' +
-    @"      |   ║   " + '\n' +
-    @"      O   ║   " + '\n' +
-    @"     /|\  ║   " + '\n' +
-    @"     / \  ║   " + '\n' +
-    @"     ███  ║   " + '\n' +
-    @"    ══════╩═══"
-};// When you offiacially loose, there will be a short animation how the man dies.
-    string[] deathAnimationsFrames = {
+            @"      ╔═══╗   " + '\n' +
+            @"      |   ║   " + '\n' +
+            @"      O   ║   " + '\n' +
+            @"     /|\  ║   " + '\n' +
+            @"       \  ║   " + '\n' +
+            @"     ███  ║   " + '\n' +
+            @"    ══════╩═══",
+
+            @"      ╔═══╗   " + '\n' +
+            @"      |   ║   " + '\n' +
+            @"      O   ║   " + '\n' +
+            @"     /|\  ║   " + '\n' +
+            @"     / \  ║   " + '\n' +
+            @"     ███  ║   " + '\n' +
+            @"    ══════╩═══"
+        };
+
+        public static string[] deathAnimationsFrames = {
 
     @"      ╔═══╗   " + '\n' +
     @"      |   ║   " + '\n' +
@@ -596,5 +589,18 @@ static void FigureWrongLetterAnimation()
     @"          ║   " + '\n' +
     @"      _   ║   " + '\n' +
     @" __/══════╩═══"
+    };
+
+        public static void PlayDeathAnimation(Stats stats)
+        {
+            foreach (var frame in deathAnimationsFrames)
+            {
+                Console.Clear();
+                if (stats.useColors)
+                    Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(frame);
+                Thread.Sleep(10);
+            }
+        }
     };
 }

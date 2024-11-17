@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace HangingMan
+namespace HangingMan.Game
 {
     public class WordLibrary
     {
-        static string[] ReadWordsFromFile()
+        public static string[] ReadWordsFromFile()
         {
             return File.ReadAllLines(Path.Combine(Environment.CurrentDirectory, "words.txt"));
         }
